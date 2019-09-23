@@ -27,6 +27,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # project apps
+    'pbm_bonds',
+
+    # 3rd party packages
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -38,6 +44,29 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': (
+        # 'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # 'dataprep_api.authentication.user_token_authentication.JwtServiceOnlyAuthentication',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    # Parser classes priority-wise for Swagger
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+        'rest_framework.parsers.JSONParser',
+    ),
+    'DJANGO_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',),
+    # 'EXCEPTION_HANDLER': 'process_data.utils.common.custom_exception_handler'
+}
 
 ROOT_URLCONF = 'pbm_api.urls'
 
