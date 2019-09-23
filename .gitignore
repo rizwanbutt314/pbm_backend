@@ -1,0 +1,7 @@
+# Directories
+.idea/
+venv3/
+
+# Files
+pbm_api/pbm_api/local_settings.py
+*.pyc
