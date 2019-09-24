@@ -18,6 +18,18 @@ class BondCategory(models.Model):
         help_text="Third prize in Rs.")
 
 
+class BondDrawDates(models.Model):
+    year = models.IntegerField(
+        default=0,
+        help_text="Year of prize bond announced"
+    )
+    date = models.DateField(default=datetime.date.today)
+    bond_category = models.ForeignKey(
+        BondCategory,
+        null=True,
+        on_delete=models.CASCADE)
+
+
 class Bond100(models.Model):
     BOND_LEVEL_CHOICES = (
         (1, 'First'),
