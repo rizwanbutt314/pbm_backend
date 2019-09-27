@@ -3,8 +3,9 @@ from django.urls import path, re_path
 
 from . import views
 
-app_name='usermanagement'
+app_name='pbm_bonds'
 
 urlpatterns = [
-    re_path(r'^api/bond-categories/$', views.APIIndex.as_view(), name="bond_categories"),
+    re_path(r'^api/bond-categories/$', views.BondCategoryAPIIndex.as_view(), name="bond_categories"),
+    re_path(r'^api/draw-dates/(?P<category>)?$', views.BondDrawDatesAPIIndex.as_view(), name="bond_draw_dates"),
 ]
