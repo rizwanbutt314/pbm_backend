@@ -41,8 +41,8 @@ def make_text_file_request(url):
 
 def format_db_date(date):
     splitted_date = date.split('-')
+    draw_year = splitted_date[2]
     draw_date = '{0}-{1}-{2}'.format(splitted_date[2], splitted_date[1], splitted_date[0])
-    draw_year = splitted_date[0]
     return draw_date, draw_year
 
 
