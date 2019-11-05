@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
     # 3rd party packages
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -123,5 +124,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+SWAGGER_SETTINGS = {
+    'DEFAULT_FIELD_INSPECTORS': [
+        'drf_yasg.inspectors.CamelCaseJSONFilter',
+        'drf_yasg.inspectors.InlineSerializerInspector',
+        'drf_yasg.inspectors.RelatedFieldInspector',
+        'drf_yasg.inspectors.ChoiceFieldInspector',
+        'drf_yasg.inspectors.FileFieldInspector',
+        'drf_yasg.inspectors.DictFieldInspector',
+        'drf_yasg.inspectors.SimpleFieldInspector',
+        'drf_yasg.inspectors.StringDefaultFieldInspector',
+    ],
+    'DEFAULT_MODEL_RENDERING': None
+}
 
 from .local_settings import *
