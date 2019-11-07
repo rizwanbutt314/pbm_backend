@@ -140,4 +140,6 @@ SWAGGER_SETTINGS = {
     'DEFAULT_MODEL_RENDERING': None
 }
 
+FIXTURE_DIRS = (BASE_DIR + '/pbm_api/fixtures/',)
+
 from .local_settings import *
