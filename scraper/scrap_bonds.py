@@ -7,12 +7,14 @@ from utils import (
     make_get_request,
     make_text_file_request,
     format_db_date,
-    fetch_previous_bond_dates
+    fetch_previous_bond_dates,
+    arguments_parser,
+    fetch_available_bonds
 )
 
 
-def main(home_url, table_name, bond_category):
-    print("Scraping 750 bonds data")
+def main(home_url, table_name, bond_category, bond):
+    print("Scraping {0} bonds data".format(bond))
     bond_dates_links = list()
     new_bond_dates = list()
 
@@ -46,9 +48,8 @@ def main(home_url, table_name, bond_category):
         bond_link = draw_data[0]
         draw_date = draw_data[1]
         draw_year = draw_data[2]
-        print("Link: ", bond_link)
         print("Date: ", draw_date)
-        print("Year: ", draw_year)
+        print("Link: ", bond_link)
 
         bond_file_data = make_text_file_request(bond_link)
 
@@ -69,11 +70,19 @@ def main(home_url, table_name, bond_category):
 
         insert_bond_data(table_name, all_bonds)
 
-    print("Scraping 750 bonds data completed!")
+    print("Scraping {0} bonds data completed!".format(bond))
 
 
 if __name__ == "__main__":
-    HOME_URL = 'http://savings.gov.pk/rs-750-draws/'
-    TABLE_NAME = 'pbm_bonds_bond750'
-    BOND_CATEGORY = 1
-    main(HOME_URL, TABLE_NAME, BOND_CATEGORY)
+    args = arguments_parser()
+    if args.bond:
+        available_bonds = fetch_available_bonds()
+        if args.bond in available_bonds.keys():
+            HOME_URL = 'http://savings.gov.pk/rs-{0}-draws/'.format(args.bond)
+            TABLE_NAME = 'pbm_bonds_bond{0}'.format(args.bond)
+            BOND_CATEGORY = available_bonds[args.bond]
+            main(HOME_URL, TABLE_NAME, BOND_CATEGORY, args.bond)
+        else:
+            print("Invalid bond provided!")
+    else:
+        print("--bond missing")

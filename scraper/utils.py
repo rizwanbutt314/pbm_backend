@@ -1,5 +1,6 @@
 import config
 import re
+import argparse
 import requests
 import psycopg2
 import psycopg2.extras
@@ -10,6 +11,13 @@ header = {
     'Host': 'savings.gov.pk',
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36',
 }
+
+
+def arguments_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-b", "--bond", help="Bond to scrap")
+    args = parser.parse_args()
+    return args
 
 
 def make_db_connection():
@@ -59,6 +67,19 @@ def fetch_previous_bond_dates(table_name, bond_category):
     db_cnx.close()
 
     return [str(db_row[0]) for db_row in data]
+
+
+def fetch_available_bonds():
+    db_cnx, db_cur = make_db_connection()
+
+    bonds_query = """SELECT id, category FROM pbm_bonds_bondcategory"""
+
+    db_cur.execute(bonds_query)
+    data = db_cur.fetchall()
+    db_cnx.commit()
+    db_cnx.close()
+
+    return {str(db_row[1]): db_row[0] for db_row in data}
 
 
 def insert_bond_data(table_name, data):
