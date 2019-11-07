@@ -51,3 +51,72 @@ class Bond100(models.Model):
         BondCategory,
         null=True,
         on_delete=models.CASCADE)
+
+
+class Bond200(models.Model):
+    BOND_LEVEL_CHOICES = (
+        (1, 'First'),
+        (2, 'Second'),
+        (3, 'Third'),
+    )
+
+    year = models.IntegerField(
+        default=0,
+        help_text="Year of prize bond announced"
+    )
+    date = models.DateField(default=datetime.date.today)
+    bond_number = models.IntegerField(
+        default=0,
+        help_text="Prize bond number"
+    )
+    bond_level = models.IntegerField(choices=BOND_LEVEL_CHOICES)
+    bond_category = models.ForeignKey(
+        BondCategory,
+        null=True,
+        on_delete=models.CASCADE)
+
+
+class Bond750(models.Model):
+    BOND_LEVEL_CHOICES = (
+        (1, 'First'),
+        (2, 'Second'),
+        (3, 'Third'),
+    )
+
+    year = models.IntegerField(
+        default=0,
+        help_text="Year of prize bond announced"
+    )
+    date = models.DateField(default=datetime.date.today)
+    bond_number = models.IntegerField(
+        default=0,
+        help_text="Prize bond number"
+    )
+    bond_level = models.IntegerField(choices=BOND_LEVEL_CHOICES)
+    bond_category = models.ForeignKey(
+        BondCategory,
+        null=True,
+        on_delete=models.CASCADE)
+
+
+class Bond1500(models.Model):
+    BOND_LEVEL_CHOICES = (
+        (1, 'First'),
+        (2, 'Second'),
+        (3, 'Third'),
+    )
+
+    year = models.IntegerField(
+        default=0,
+        help_text="Year of prize bond announced"
+    )
+    date = models.DateField(default=datetime.date.today)
+    bond_number = models.IntegerField(
+        default=0,
+        help_text="Prize bond number"
+    )
+    bond_level = models.IntegerField(choices=BOND_LEVEL_CHOICES)
+    bond_category = models.ForeignKey(
+        BondCategory,
+        null=True,
+        on_delete=models.CASCADE)
