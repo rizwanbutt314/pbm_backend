@@ -1,0 +1,255 @@
+[
+  {
+    "model": "pbm_bonds.bondcategory",
+    "pk": 1,
+    "fields": {
+      "category": "7500",
+      "first_prize": "15,000,000",
+      "second_prize": "5,000,000",
+      "third_prize": "93,000"
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 299,
+    "fields": {
+      "year": 2015,
+      "date": "2015-02-16",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 300,
+    "fields": {
+      "year": 2016,
+      "date": "2016-02-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 301,
+    "fields": {
+      "year": 2017,
+      "date": "2017-02-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 302,
+    "fields": {
+      "year": 2018,
+      "date": "2018-02-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 303,
+    "fields": {
+      "year": 2019,
+      "date": "2019-02-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 304,
+    "fields": {
+      "year": 2015,
+      "date": "2015-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 305,
+    "fields": {
+      "year": 2016,
+      "date": "2016-05-16",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 306,
+    "fields": {
+      "year": 2017,
+      "date": "2017-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 307,
+    "fields": {
+      "year": 2018,
+      "date": "2018-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 308,
+    "fields": {
+      "year": 2019,
+      "date": "2019-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 309,
+    "fields": {
+      "year": 2015,
+      "date": "2015-08-17",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 310,
+    "fields": {
+      "year": 2016,
+      "date": "2016-08-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 311,
+    "fields": {
+      "year": 2017,
+      "date": "2017-08-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 312,
+    "fields": {
+      "year": 2018,
+      "date": "2018-08-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 313,
+    "fields": {
+      "year": 2019,
+      "date": "2019-08-16",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 314,
+    "fields": {
+      "year": 2015,
+      "date": "2015-11-16",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 315,
+    "fields": {
+      "year": 2016,
+      "date": "2016-11-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 316,
+    "fields": {
+      "year": 2017,
+      "date": "2017-11-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 317,
+    "fields": {
+      "year": 2018,
+      "date": "2018-11-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 318,
+    "fields": {
+      "year": 2013,
+      "date": "2013-02-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 319,
+    "fields": {
+      "year": 2014,
+      "date": "2014-02-17",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 320,
+    "fields": {
+      "year": 2013,
+      "date": "2013-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 321,
+    "fields": {
+      "year": 2014,
+      "date": "2014-05-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 322,
+    "fields": {
+      "year": 2013,
+      "date": "2013-08-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 323,
+    "fields": {
+      "year": 2014,
+      "date": "2014-08-15",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 324,
+    "fields": {
+      "year": 2013,
+      "date": "2013-11-18",
+      "bond_category": 1
+    }
+  },
+  {
+    "model": "pbm_bonds.bonddrawdates",
+    "pk": 325,
+    "fields": {
+      "year": 2014,
+      "date": "2014-11-17",
+      "bond_category": 1
+    }
+  }
+]
