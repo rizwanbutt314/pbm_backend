@@ -1,0 +1,14 @@
+beautifulsoup4==4.8.0
+bs4==0.0.1
+coreapi==2.3.3
+coreschema==0.0.4
+Django==2.2.5
+django-filter==2.2.0
+djangorestframework==3.10.3
+drf-yasg==1.17.0
+html5lib==1.0.1
+Jinja2==2.10.3
+psycopg2-binary==2.8.3
+pyparsing==2.4.3
+requests==2.22.0
+sqlparse==0.3.0
