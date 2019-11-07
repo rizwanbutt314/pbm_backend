@@ -9,6 +9,9 @@ jobs:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
+        environment: # environment variables for the Postgres container.
+            POSTGRES_USER: root
+            POSTGRES_DB: circle_test
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -27,6 +30,10 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run:
+          name: copy local settings
+          command: |
+            cp pbm_api/pbm_api/local_settings.py.example pbm_api/pbm_api/local_settings.py
       - run:
           name: install dependencies
           command: |

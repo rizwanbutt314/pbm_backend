@@ -10,9 +10,9 @@ ALLOWED_HOSTS = ['*']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deeparmor',
-        'USER': 'postgres',
-        'PASSWORD': 'deeparmor',
+        'NAME': 'circle_test',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'TEST': {
             'NAME': 'test_pbm'
