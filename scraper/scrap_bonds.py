@@ -6,10 +6,12 @@ from utils import (
     insert_draw_dates,
     make_get_request,
     make_text_file_request,
+    make_pdf_file_request,
     format_db_date,
     fetch_previous_bond_dates,
     arguments_parser,
-    fetch_available_bonds
+    fetch_available_bonds,
+    ContentSplitter
 )
 
 
@@ -51,11 +53,16 @@ def main(home_url, table_name, bond_category, bond):
         print("Date: ", draw_date)
         print("Link: ", bond_link)
 
-        bond_file_data = make_text_file_request(bond_link)
+        if '.pdf' in bond_link:
+            bond_file_data = make_pdf_file_request(bond_link)
+        else:
+            bond_file_data = make_text_file_request(bond_link)
 
         # Extracting bond numbers from list
-        splitted_content = bond_file_data.split(
-            '--------------------------------------------------------------------------')
+        content_splitter = ContentSplitter(bond_file_data)
+        content_splitter.split_content()
+        splitted_content = content_splitter.splitted_content
+
         first_prize = extract_first_prize(splitted_content[1], draw_year, draw_date, bond_category)
         second_prizes = extract_second_prizes(splitted_content[2], draw_year, draw_date, bond_category)
         try:
@@ -74,6 +81,13 @@ def main(home_url, table_name, bond_category, bond):
 
 
 if __name__ == "__main__":
+    """
+    # Linux dependicies for installing pdftotext
+    sudo apt-get update
+    sudo apt-get install build-essential libpoppler-cpp-dev pkg-config python-dev
+    pip install pdftotext
+    """
+
     args = arguments_parser()
     if args.bond:
         available_bonds = fetch_available_bonds()
