@@ -36,6 +36,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^bond/?', include('pbm_bonds.urls')),
+    url(r'^api/?', include('pbm_bonds.urls')),
+    url(r'^api/?', include('pbm_search_bonds.urls')),
     url(r'^api-doc/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
