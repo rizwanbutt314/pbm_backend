@@ -52,6 +52,14 @@ class Bond100(models.Model):
         null=True,
         on_delete=models.CASCADE)
 
+    def as_dict(self):
+        return {
+            "year": self.year,
+            "date": self.date,
+            "bond_number": self.bond_number,
+            "bond_level": self.bond_level,
+        }
+
 
 class Bond200(models.Model):
     BOND_LEVEL_CHOICES = (
@@ -74,6 +82,14 @@ class Bond200(models.Model):
         BondCategory,
         null=True,
         on_delete=models.CASCADE)
+
+    def as_dict(self):
+        return {
+            "year": self.year,
+            "date": self.date,
+            "bond_number": self.bond_number,
+            "bond_level": self.bond_level,
+        }
 
 
 class Bond750(models.Model):
@@ -98,6 +114,14 @@ class Bond750(models.Model):
         null=True,
         on_delete=models.CASCADE)
 
+    def as_dict(self):
+        return {
+            "year": self.year,
+            "date": self.date,
+            "bond_number": self.bond_number,
+            "bond_level": self.bond_level,
+        }
+
 
 class Bond1500(models.Model):
     BOND_LEVEL_CHOICES = (
@@ -120,3 +144,11 @@ class Bond1500(models.Model):
         BondCategory,
         null=True,
         on_delete=models.CASCADE)
+
+    def as_dict(self):
+        return {
+            "year": self.year,
+            "date": self.date,
+            "bond_number": self.bond_number,
+            "bond_level": self.bond_level,
+        }
